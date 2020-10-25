@@ -40,7 +40,7 @@ Click the [Deploy to Netlify Button](https://app.netlify.com/start/deploy?reposi
 1. Clone down the repository
 
     ```bash
-    git clone https://github.com/netlify/netlify-faunadb-example.git
+    git clone https://github.com/dentaldatadrive/dentaldatadrive.git 
     ```
 
 2. Enter the repo directory
