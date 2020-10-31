@@ -39,6 +39,12 @@ function createFaunaDB(key) {
           name: 'all_todos',
           source: q.Ref('classes/todos')
         }))
+    }).then(() => {
+      return client.query(
+        q.Create(q.Ref('indexes'), {
+          name: 'all_practitioners',
+          source: q.Ref('classes/practitioners')
+        }))
     }).catch((e) => {
       // Database already exists
       if (e.requestResult.statusCode === 400 && e.message === 'instance not unique') {

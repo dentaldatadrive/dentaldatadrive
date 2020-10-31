@@ -42,11 +42,26 @@ const batchDeleteTodo = (todoIds) => {
     return response.json()
   })
 }
+const createPractitioner = (practitioner) => {
+  return fetch('/.netlify/functions/practitioner', {
+    body: JSON.stringify({
+      firstname: practitioner.firstname,
+      lastname: practitioner.lastname,
+      email: practitioner.email,
+      password: practitioner.password,
+      practice: practitioner.practice
+    }),
+    method: 'POST'
+  }).then(response => {
+    return response.json()
+  })
+}
 
 export default {
   create: create,
   readAll: readAll,
   update: update,
   delete: deleteTodo,
-  batchDelete: batchDeleteTodo
+  batchDelete: batchDeleteTodo,
+  createPractitioner: createPractitioner
 }
